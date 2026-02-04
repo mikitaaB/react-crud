@@ -21,14 +21,14 @@
    ```
    npm run dev
    ```
-    Приложение откроется по адресу **http://localhost:5173**.
+    Приложение откроется по адресу http://localhost:5173.
 
 4. Запустить json server для имитации backend:
     ```
     npm run start:db
     ```
 
-    Сервер будет доступен по адресу **http://localhost:5000**.
+    Сервер будет доступен по адресу http://localhost:5000.
 
     #### Production сборка
 
