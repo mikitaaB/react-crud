@@ -23,7 +23,7 @@ const TaskDetailPage = () => {
     if (isLoading) {
         return (
             <Container sx={{ mt: 4 }}>
-                <Typography>{"Загрузка..."}</Typography>
+                <Typography>{"Loading..."}</Typography>
             </Container>
         );
     }
@@ -31,7 +31,7 @@ const TaskDetailPage = () => {
     if (error || !task) {
         return (
             <Container sx={{ mt: 4 }}>
-                <Typography color="error">{"Ошибка загрузки задачи"}</Typography>
+                <Typography color="error">{"Task loading error"}</Typography>
             </Container>
         );
     }
@@ -53,21 +53,21 @@ const TaskDetailPage = () => {
                 </Typography>
 
                 <Typography variant="body1" sx={{ mb: 2 }}>
-                    {task.description || 'Описание отсутствует'}
+                    {task.description || 'Description is missing'}
                 </Typography>
 
                 <Stack spacing={1} sx={{ mb: 3 }}>
                     <Typography variant="body2">
-                        <strong>{"Статус:"}</strong> {task.status}
+                        <strong>{"Status:"}</strong> {task.status}
                     </Typography>
                     <Typography variant="body2">
-                        <strong>{"Приоритет:"}</strong> {task.priority}
+                        <strong>{"Priority:"}</strong> {task.priority}
                     </Typography>
                     <Typography variant="body2">
-                        <strong>{"Дедлайн:"}</strong> {task.deadline}
+                        <strong>{"Deadline:"}</strong> {task.deadline}
                     </Typography>
                     <Typography variant="body2">
-                        <strong>{"Теги:"}</strong>{' '}
+                        <strong>{"Tags:"}</strong>{' '}
                         {taskTagObjects.length > 0
                             ? taskTagObjects.map(t => t!.name).join(', ')
                             : '—'}
@@ -79,7 +79,7 @@ const TaskDetailPage = () => {
                         variant="contained"
                         onClick={() => navigate(`/tasks/${task.id}/edit`)}
                     >
-                        {"Редактировать"}
+                        {"Edit"}
                     </Button>
 
                     <Button
@@ -87,7 +87,7 @@ const TaskDetailPage = () => {
                         color="error"
                         onClick={() => setOpenDeleteModal(true)}
                     >
-                        {"Удалить"}
+                        {"Delete"}
                     </Button>
                 </Box>
             </Paper>
@@ -96,8 +96,8 @@ const TaskDetailPage = () => {
                 {openDeleteModal && (
                     <ConfirmModal
                         open={openDeleteModal}
-                        confirmMessage="Вы уверены, что хотите удалить это задание?"
-                        confirmBtnText="Удалить"
+                        confirmMessage="Are you sure you want to delete the task?"
+                        confirmBtnText="Delete"
                         onClose={() => setOpenDeleteModal(false)}
                         onConfirm={handleDelete}
                     />

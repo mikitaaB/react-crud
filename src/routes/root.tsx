@@ -14,10 +14,10 @@ const Root = () => {
                         {"Task Manager"}
                     </Typography>
                     <Button color="inherit" component={Link} to="/">
-                        {"Главная"}
+                        {"Main"}
                     </Button>
                     <Button color="inherit" component={Link} to="/tasks/new">
-                        {"Создать задачу"}
+                        {"Create a Task"}
                     </Button>
                 </Toolbar>
             </AppBar>

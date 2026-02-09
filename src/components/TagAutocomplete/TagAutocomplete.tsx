@@ -55,7 +55,7 @@ const TagAutocomplete = ({ control, error }: TagAutocompleteProps) => {
                             {...params}
                             label="Теги"
                             error={!!error}
-                            helperText={error ? 'Требуется хотя бы один тег' : ''}
+                            helperText={error ? 'At least one tag is required' : ''}
                         />
                     )}
                 />

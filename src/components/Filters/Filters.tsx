@@ -38,11 +38,11 @@ const Filters = ({
     return (
         <Box sx={{ display: "flex", gap: 2, mb: 3, flexWrap: "wrap" }}>
             <AppSelect
-                label="Статус"
+                label="Status"
                 value={status}
                 onChange={setStatus}
                 options={[
-                    { label: "Все", value: "" },
+                    { label: "All", value: "" },
                     ...Object.entries(STATUSES).map(([value, label]) => ({
                         value,
                         label,
@@ -51,11 +51,11 @@ const Filters = ({
             />
 
             <AppSelect
-                label="Приоритет"
+                label="Priority"
                 value={priority}
                 onChange={setPriority}
                 options={[
-                    { label: "Все", value: "" },
+                    { label: "All", value: "" },
                     ...Object.entries(PRIORITIES).map(([value, label]) => ({
                         value,
                         label,
@@ -64,11 +64,11 @@ const Filters = ({
             />
 
             <AppSelect
-                label="Тег"
+                label="Tag"
                 value={tag}
                 onChange={setTag}
                 options={[
-                    { label: "Все", value: "" },
+                    { label: "All", value: "" },
                     ...(tagsLoading
                         ? []
                         : tags.map((t) => ({ label: t.name, value: t.id }))),
@@ -76,15 +76,15 @@ const Filters = ({
             />
 
             <AppSelect
-                label="Сортировка"
+                label="Sort"
                 value={sort}
                 onChange={setSort}
                 options={[
-                    { label: "Без сортировки", value: "" },
-                    { label: "По дате создания (по убыв.)", value: "createdAt_desc" },
-                    { label: "По дате создания (по возр.)", value: "createdAt_asc" },
-                    { label: "По дедлайну (по возр.)", value: "deadline_asc" },
-                    { label: "По дедлайну (по убыв.)", value: "deadline_desc" },
+                    { label: "No sorting", value: "" },
+                    { label: "By creation date (desc)", value: "createdAt_desc" },
+                    { label: "By creation date (asc)", value: "createdAt_asc" },
+                    { label: "By deadline (asc)", value: "deadline_asc" },
+                    { label: "By deadline (desc)", value: "deadline_desc" },
                 ]}
             />
 

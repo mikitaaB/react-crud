@@ -48,7 +48,7 @@ const TaskCard = ({ task, onTagClick }: { task: Task; onTagClick: (tag: string) 
                 </Typography>
 
                 <AppSelect<TaskStatus>
-                    label="Статус"
+                    label="Status"
                     value={task.status}
                     onChange={(value) =>
                         updateStatus({ id: task.id, status: value })
@@ -63,11 +63,11 @@ const TaskCard = ({ task, onTagClick }: { task: Task; onTagClick: (tag: string) 
                 />
 
                 <Typography variant="body2">
-                    {"Приоритет: "}<strong>{task.priority}</strong>
+                    {"Priority: "}<strong>{task.priority}</strong>
                 </Typography>
 
                 <Typography variant="body2">
-                    {"Дедлайн: "}<strong>{task.deadline}</strong>
+                    {"Deadline: "}<strong>{task.deadline}</strong>
                 </Typography>
 
                 <Box sx={{ mt: 1, display: "flex", gap: 1, flexWrap: "wrap" }}>

@@ -50,7 +50,7 @@ const TaskList = ({
     if (items.length === 0 && !isFetching) {
         return (
             <Box sx={{ textAlign: "center", py: 11 }}>
-                {"Задачи не найдены"}
+                {"No tasks"}
             </Box>
         );
     }

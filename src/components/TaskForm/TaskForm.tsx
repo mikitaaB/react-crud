@@ -17,12 +17,12 @@ import AppSelect from '../AppSelect';
 import { PRIORITIES, STATUSES } from '../../constants';
 
 const taskSchema = z.object({
-    title: z.string().min(5, 'Заголовок должен содержать не менее 5 символов'),
-    description: z.string().max(500, 'Описание должно содержать не более 500 символов'),
+    title: z.string().min(5, 'The title must be at least 5 characters long'),
+    description: z.string().max(500, 'The description must contain no more than 500 characters'),
     status: z.enum([TaskStatus.Todo, TaskStatus.InProgress, TaskStatus.Done]),
     priority: z.enum([TaskPriority.Low, TaskPriority.Medium, TaskPriority.High]),
-    deadline: z.string().min(1, 'Требуется дедлайн'),
-    tags: z.array(z.string()).min(1, 'Требуется хотя бы один тег'),
+    deadline: z.string().min(1, 'Deadline is required'),
+    tags: z.array(z.string()).min(1, 'At least one tag is required'),
 });
 
 export type TaskFormValues = z.infer<typeof taskSchema>;
@@ -91,7 +91,7 @@ const TaskForm = ({ task }: TaskFormProps) => {
             }}
         >
             <TextField
-                label="Заголовок"
+                label="Title"
                 fullWidth
                 error={!!errors.title}
                 helperText={errors.title?.message}
@@ -99,7 +99,7 @@ const TaskForm = ({ task }: TaskFormProps) => {
             />
 
             <TextField
-                label="Описание"
+                label="Description"
                 fullWidth
                 multiline
                 rows={4}
@@ -114,7 +114,7 @@ const TaskForm = ({ task }: TaskFormProps) => {
                     control={control}
                     render={({ field }) => (
                         <AppSelect<TaskStatus>
-                            label="Статус"
+                            label="Status"
                             value={field.value}
                             onChange={field.onChange}
                             options={Object.entries(STATUSES).map(([value, label]) => ({
@@ -134,7 +134,7 @@ const TaskForm = ({ task }: TaskFormProps) => {
 
             <FormControl component="fieldset" fullWidth error={!!errors.priority}>
                 <FormLabel component="legend" sx={{ mb: 1 }}>
-                    {"Приоритет"}
+                    {"Priority"}
                 </FormLabel>
 
                 <Controller
@@ -156,7 +156,7 @@ const TaskForm = ({ task }: TaskFormProps) => {
             </FormControl>
 
             <TextField
-                label="Дедлайн"
+                label="Deadline"
                 type="date"
                 fullWidth
                 slotProps={{
@@ -177,10 +177,10 @@ const TaskForm = ({ task }: TaskFormProps) => {
                 }}
             >
                 <Button variant="outlined" type="button" onClick={handleCancelClick} sx={{ alignSelf: 'flex-end' }}>
-                    {"Отмена"}
+                    {"Cancel"}
                 </Button>
                 <Button variant="contained" type="submit" sx={{ alignSelf: 'flex-end' }}>
-                    {task ? "Обновить" : "Создать"}
+                    {task ? "Update" : "Create"}
                 </Button>
             </div>
         </form>

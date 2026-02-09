@@ -16,7 +16,7 @@ const MainPage = () => {
     return (
         <Box>
             <Typography variant="h4" gutterBottom>
-                {"Список задач"}
+                {"List of Tasks"}
             </Typography>
 
             <Filters

@@ -21,12 +21,12 @@ const ConfirmModal = ({
 }: ConfirmModalProps) => {
     return (
         <Dialog open={open} onClose={onClose}>
-            <DialogTitle>{"Подтверждение"}</DialogTitle>
+            <DialogTitle>{"Confirmation"}</DialogTitle>
             <DialogContent>
                 <p>{confirmMessage}</p>
             </DialogContent>
             <DialogActions>
-                <Button onClick={onClose}>{"Отмена"}</Button>
+                <Button onClick={onClose}>{"Cancel"}</Button>
                 <Button onClick={onConfirm} color="error">{confirmBtnText}</Button>
             </DialogActions>
         </Dialog>

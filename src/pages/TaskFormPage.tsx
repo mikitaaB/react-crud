@@ -17,7 +17,7 @@ const TaskFormPage = () => {
     if (isEdit && isLoading) {
         return (
             <Container sx={{ mt: 4 }}>
-                <Typography>{"Загрузка..."}</Typography>
+                <Typography>{"Loading..."}</Typography>
             </Container>
         );
     }
@@ -25,7 +25,7 @@ const TaskFormPage = () => {
     return (
         <Container sx={{ mt: 4 }}>
             <Typography variant="h4" gutterBottom>
-                {isEdit ? "Редактирование задачи" : "Создание задачи"}
+                {isEdit ? "Edit the Task" : "Create the Task"}
             </Typography>
 
             <TaskForm key={id ?? "create"} task={task} />

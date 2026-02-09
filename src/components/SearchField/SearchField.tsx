@@ -20,7 +20,7 @@ const SearchField = ({
 
     return (
         <TextField
-            label="Поиск"
+            label="Search"
             value={localValue}
             onChange={(e) => setLocalValue(e.target.value)}
         />
