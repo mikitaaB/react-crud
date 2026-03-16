@@ -53,7 +53,7 @@ const TagAutocomplete = ({ control, error }: TagAutocompleteProps) => {
                     renderInput={(params) => (
                         <TextField
                             {...params}
-                            label="Теги"
+                            label="Tags"
                             error={!!error}
                             helperText={error ? 'At least one tag is required' : ''}
                         />
